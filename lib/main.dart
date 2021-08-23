@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/Service.dart';
 
 void main() {
   runApp(MyApp());
@@ -50,8 +51,19 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: TabBarView(
        children: [
-         Icon(Icons.directions_car),
-         Icon(Icons.directions_transit),
+         Expanded(child: new FutureBuilder<List<Foodlist>>(
+          future: getdata(),
+          builder: (context, snapshot) {
+          if (snapshot.hasData) {
+          return new ListView.builder(
+          itemCount: snapshot.data.length,
+          itemBuilder: (BuildContext context, int index) {
+            if(snapshot.data[index].)
+
+          });
+          }}),),
+
+         Icon(Icons.directions_bike),
          Icon(Icons.directions_bike),
        ],
       ),
